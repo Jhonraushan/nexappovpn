@@ -1,0 +1,3 @@
+@echo off
+echo Starting Nexapp EDGE VPN with administrator privileges...
+powershell -Command "Start-Process -FilePath 'electron.cmd' -ArgumentList './' -Verb RunAs"

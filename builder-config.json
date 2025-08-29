@@ -1,0 +1,24 @@
+{
+  "appId": "com.nexapp.edgevpn",
+  "productName": "Nexapp EDGE VPN",
+  "directories": {
+    "output": "dist"
+  },
+  "files": [
+    "**/*",
+    "!dist",
+    "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+    "!**/.*",
+    "!**/test/**"
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "app/icon.png",
+    "requestedExecutionLevel": "requireAdministrator"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": true,
+    "allowToChangeInstallationDirectory": true
+  }
+}
