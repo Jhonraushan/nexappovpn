@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nexapp EDGE VPN</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="logo">
+        <h2>Nexapp EDGE</h2>
+      </div>
+      <div class="menu">
+        <div class="menu-item active"><i class="fas fa-home"></i> Dashboard</div>
+        <div class="menu-item"><i class="fas fa-network-wired"></i> Proxies</div>
+        <div class="menu-item"><i class="fas fa-certificate"></i> Certificates & Tokens</div>
+        <div class="menu-item"><i class="fas fa-cog"></i> Settings</div>
+        <div class="menu-item"><i class="fas fa-chart-bar"></i> Statistics</div>
+        <div class="menu-item"><i class="fas fa-info-circle"></i> About</div>
+      </div>
+    </div>
+    
+    <div class="main-content">
+      <div class="header">
+        <h1>VPN Dashboard</h1>
+        <div class="connection-status" id="connection-status">Disconnected</div>
+      </div>
+      
+      <div class="card profile-card">
+        <h3><i class="fas fa-file-import"></i> VPN Profile</h3>
+        <div class="file-input-container">
+          <label for="file-input" class="file-input-label">Choose .ovpn file</label>
+          <input type="file" id="file-input" accept=".ovpn" />
+          <span id="file-name">No file selected</span>
+        </div>
+      </div>
+      
+      <div class="card credentials-card">
+        <h3><i class="fas fa-user-lock"></i> Credentials</h3>
+        <input type="text" id="vpn-username" placeholder="Username" />
+        <input type="password" id="vpn-password" placeholder="Password" />
+      </div>
+      
+      <div class="card actions-card">
+        <button id="connect-btn" class="primary-btn"><i class="fas fa-plug"></i> Connect</button>
+        <button id="disconnect-btn" class="secondary-btn"><i class="fas fa-power-off"></i> Disconnect</button>
+      </div>
+      
+      <div class="card stats-card">
+        <h3><i class="fas fa-chart-line"></i> Connection Statistics</h3>
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-label"><i class="fas fa-arrow-down"></i> Download</div>
+            <div class="stat-value" id="bytes-received">0 B</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label"><i class="fas fa-arrow-up"></i> Upload</div>
+            <div class="stat-value" id="bytes-sent">0 B</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label"><i class="fas fa-clock"></i> Connected Time</div>
+            <div class="stat-value" id="connected-time">00:00:00</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card log-card">
+        <h3><i class="fas fa-terminal"></i> Connection Log</h3>
+        <pre id="log-output"></pre>
+      </div>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>
